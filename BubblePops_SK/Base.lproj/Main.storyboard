@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pusab.ttf">
+            <string>Pusab</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="BubblePops_SK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="cGW-Xq-FmJ" kind="show" identifier="leaderboardSegue" id="GlN-WP-JqP"/>
+                        <segue destination="Hac-9P-S2e" kind="show" identifier="settingsSegue" id="zlR-x1-9fT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="64"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="uCo-Mf-yoW">
+            <objects>
+                <viewController id="Hac-9P-S2e" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ke1-Uu-ofv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="WYN-pb-TYa">
+                                <rect key="frame" x="33" y="239.5" width="348" height="363"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gzw-Ev-gmw">
+                                        <rect key="frame" x="22" y="0.0" width="304" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="5wb-qF-MFO"/>
+                                        </constraints>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The number of bubbles:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-9W-T1F">
+                                        <rect key="frame" x="0.0" y="113" width="348" height="24"/>
+                                        <fontDescription key="fontDescription" name="Pusab" family="Pusab" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fIA-SA-8QP">
+                                        <rect key="frame" x="22" y="220" width="304" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="27M-nt-Rjm"/>
+                                        </constraints>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer Setting:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-Gy-dog">
+                                        <rect key="frame" x="40" y="333" width="268" height="30"/>
+                                        <fontDescription key="fontDescription" name="Pusab" family="Pusab" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R2M-nQ-C6T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WYN-pb-TYa" firstAttribute="centerX" secondItem="ke1-Uu-ofv" secondAttribute="centerX" id="QrR-xG-IQ1"/>
+                            <constraint firstItem="WYN-pb-TYa" firstAttribute="centerY" secondItem="ke1-Uu-ofv" secondAttribute="centerY" id="n6C-ar-u9F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lDd-h5-U3T"/>
+                    <connections>
+                        <outlet property="bubblesLabel" destination="pKq-9W-T1F" id="Y0K-7F-n6d"/>
+                        <outlet property="bubblesSlider" destination="gzw-Ev-gmw" id="fC7-VH-88K"/>
+                        <outlet property="timerLabel" destination="yCg-Gy-dog" id="Afl-WR-p1k"/>
+                        <outlet property="timerSlider" destination="fIA-SA-8QP" id="JIE-FG-QQ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4Z-ny-eRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818.84057971014499" y="768.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gL4-NT-aK7">
+            <objects>
+                <viewController id="cGW-Xq-FmJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zbE-nm-w4a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iRC-br-PKc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y3Q-71-c3F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y3Q-71-c3F" firstAttribute="trailing" secondItem="iRC-br-PKc" secondAttribute="trailing" id="2Y4-qO-Luw"/>
+                            <constraint firstItem="Y3Q-71-c3F" firstAttribute="bottom" secondItem="iRC-br-PKc" secondAttribute="bottom" id="8Hr-D2-yJu"/>
+                            <constraint firstItem="iRC-br-PKc" firstAttribute="leading" secondItem="Y3Q-71-c3F" secondAttribute="leading" id="cT4-A4-Ghl"/>
+                            <constraint firstItem="iRC-br-PKc" firstAttribute="top" secondItem="Y3Q-71-c3F" secondAttribute="top" id="gXJ-BV-Y9m"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pgj-mo-PuK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6V-fL-LMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
