@@ -1,4 +1,5 @@
 # BubblePops_SK
+video demonstration: https://www.youtube.com/shorts/BXPlJxqXH-Y
 
 BubblePops is a game running on iOS and iPadOS, which was developed by integratedly use SpriteKit and UIkit.
 
